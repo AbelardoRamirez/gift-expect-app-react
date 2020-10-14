@@ -1,29 +1,38 @@
 import React, { useEffect, useState } from 'react'
 
 export const GifGrid = ({ category }) => {
-
+    const [searchQuery, setSearchQuery] = useState(category)
     const [imagenes, setImagenes] = useState([]);
 
     useEffect(() => {
-        fetch(`https://api.giphy.com/v1/gifs/search?q=${category}&api_key=Us5ddAo4CXQDQjg5xYxz2uFrH73kiYmw`)
+        fetch(`https://api.giphy.com/v1/gifs/search?q=${searchQuery}&limit=10&api_key=Us5ddAo4CXQDQjg5xYxz2uFrH73kiYmw`)
             .then(resp => resp.json())
             .then(data => {
-                console.log('====================================');
-                console.log(data);
-                console.log('====================================');
+                setImagenes([...data.data]);
             })
     }, []);
 
     return (
-        <div className="col-lg-3 col-md-4 col-sm-6 col-12 my-1">
-            <div className="card">
-                <img src="..." className="card-img-top" />
-                <div className="card-body">
-                    <p className="card-text">
-                        {category}
-                    </p>
-                </div>
-            </div>
+        <div className="row">
+            {imagenes.map(gif => {
+                return (
+                    <div key={gif.id} className="col-3 my-1">
+                        <div className="card text-center">
+                            <div className="card-header">
+                                T: <span className="font-weight-bolder">{gif.type}</span> - ID: <span className="font-weight-lighter">{gif.id}</span>
+                            </div>
+                            <div className="card-body">
+                                <img src={gif.images.original.url} alt={gif.title} className="img-fluid" />
+                                <h5 className="card-title">{gif.title}</h5>
+                                <p className="card-text">Source: <span className="font-weight-lighter text-monospace">{gif.source}</span></p>
+                            </div>
+                            <div className="card-footer text-muted">
+                                {gif.import_datetime}
+                            </div>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     )
 }

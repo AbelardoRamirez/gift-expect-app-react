@@ -3,9 +3,7 @@ import AddCategory from './AddCategory';
 import { GifGrid } from './GifGrid';
 
 const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['Battlefield 1']);
-
-    // const nuevaCategoria = (newCat) => setCategories(cat => [...cat, newCat]);
+    const [categories, setCategories] = useState([]);
 
     return (
         <div className="row justify-content-center">
@@ -16,9 +14,11 @@ const GifExpertApp = () => {
                 <AddCategory setCategories={setCategories} />
                 <hr className="hr shadow-lg" />
                 <div className="row justify-content-center">
-                    {
-                        categories.map(cat => (<GifGrid category={cat} key={cat} />))
-                    }
+                    <div className="col">
+                        {
+                            categories.map(cat => (<GifGrid category={cat} key={cat} />))
+                        }
+                    </div>
                 </div>
             </div>
         </div>
