@@ -6,7 +6,7 @@ const AddCategory = ({ setCategories }) => {
 
     const handleClick = () => {
         if (newCategorie !== '' && newCategorie.length > 3) {
-            setCategories(cat => [...cat, newCategorie]);
+            setCategories(cat => [newCategorie, ...cat]);
             setNewCategorie('');
         } else {
             console.log('====================================');
