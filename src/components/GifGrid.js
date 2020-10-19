@@ -1,35 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react';
+//import { getGifs } from '../helpers/GetGifs';
+import { useFetchGifs } from '../hooks/useFetchGifs'
+
+
 
 export const GifGrid = ({ category }) => {
-    const [searchQuery, setSearchQuery] = useState(category)
-    const [imagenes, setImagenes] = useState([]);
+    const { loading, data: imagenes } = useFetchGifs(category);
 
     useEffect(() => {
-        fetch(`https://api.giphy.com/v1/gifs/search?q=${searchQuery}&limit=20&api_key=Us5ddAo4CXQDQjg5xYxz2uFrH73kiYmw`)
-            .then(resp => resp.json())
-            .then(data => {
-                const categoria = data.data.map(img => ({ type: img.type, id: img.id, title: img.title, import_datetime: img.import_datetime, imagen: img.images.original.url, source: img.source }));
-                setImagenes([...categoria]);
-            })
-    }, []);
+
+    }, [category]);
 
     return (
         <div className="row">
-            {imagenes.map(gif => {
+            {
+                loading
+                &&
+                <div className="col">
+                    <h6 className="h6 font-weight-lighter text-muted">Loading Content Please Wait...</h6>
+                </div>
+            }
+            {imagenes.map(({ id, type, imagen, title, import_datetime, source }) => {
                 return (
-                    <div key={gif.id} className="col-3 my-1">
+                    <div key={id} className="col-3 my-1">
                         <hr className="hr shadow-lg border" />
                         <div className="card text-center">
                             <div className="card-header">
-                                T: <span className="font-weight-bolder">{gif.type}</span> - ID: <span className="font-weight-lighter">{gif.id}</span>
+                                T: <span className="font-weight-bolder">{type}</span> - ID: <span className="font-weight-lighter">{id}</span>
                             </div>
                             <div className="card-body">
-                                <img src={gif.imagen} alt={gif.title} className="img-fluid" />
-                                <h5 className="card-title">{gif.title}</h5>
-                                <p className="card-text">Source: <span className="font-weight-lighter text-monospace">{gif.source}</span></p>
+                                <img src={imagen} alt={title} className="img-fluid" />
+                                <h5 className="card-title">{title}</h5>
+                                <p className="card-text">Source: <span className="font-weight-lighter text-monospace">{source}</span></p>
                             </div>
                             <div className="card-footer text-muted">
-                                {gif.import_datetime}
+                                {import_datetime}
                             </div>
                         </div>
                     </div>
