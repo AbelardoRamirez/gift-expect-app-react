@@ -1,3 +1,10 @@
+# Comandos & Plug-ings utiles para React
+
+1. _npm run build_ Para realizar un _*Build* de produccion_..
+2. _npm i --global http-server_
+   1. _Para probar un Build de Produccion & ver si funciona el proyecto..._
+      1. Para montar el proyecto _bebe_ _ubicarse en el Path del Build de produccion &_: http-server -o
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
