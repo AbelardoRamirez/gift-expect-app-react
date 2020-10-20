@@ -16,13 +16,13 @@ export const GifGrid = ({ category }) => {
             {
                 loading
                 &&
-                <div className="col">
+                <div className="col animate__animated animate__repeat-2 animate__flash">
                     <h6 className="h6 font-weight-lighter text-muted">Loading Content Please Wait...</h6>
                 </div>
             }
-            {imagenes.map(({ id, type, imagen, title, import_datetime, source }) => {
+            {!loading && imagenes.map(({ id, type, imagen, title, import_datetime, source }) => {
                 return (
-                    <div key={id} className="col-3 my-1">
+                    <div key={id} className="col-3 animate__animated animate__fadeIn">
                         <hr className="hr shadow-lg border" />
                         <div className="card text-center">
                             <div className="card-header">
