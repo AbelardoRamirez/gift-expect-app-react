@@ -16,11 +16,11 @@ describe('Pruebas en <GifGridItem/>', () => {
             {...obj}
         />);
         const img = wrapper.find('img');
-        // console.log(img.html());
+        console.log(img);
         // console.log(img.props());
         // console.log(img.props().src);
         const titleh5 = wrapper.find('h5');
-        // console.log(titleh5.html());
+        console.log(titleh5);
         // console.log(titleh5.props());
 
         expect(wrapper).toMatchSnapshot();
