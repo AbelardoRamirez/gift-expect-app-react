@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el Componente <GriGift/> Debe de mostrar el componente correctamente 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col animate__animated animate__repeat-2 animate__flash"
+  >
+    <h6
+      className="h6 font-weight-lighter text-muted"
+    >
+      Loading Content Please Wait...
+    </h6>
+  </div>
+</div>
+`;
