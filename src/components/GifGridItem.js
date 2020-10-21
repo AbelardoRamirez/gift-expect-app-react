@@ -12,7 +12,7 @@ const GifGridItem = ({ id, type, imagen, title, source, import_datetime }) => {
                 </div>
                 <div className="card-body">
                     <img src={imagen} alt={title} className="img-fluid" />
-                    <h5 className="card-title">{title}</h5>
+                    <h5 className="card-title h5">{title}</h5>
                     <p className="card-text">Source: <span className="font-weight-lighter text-monospace">{source}</span></p>
                 </div>
                 <div className="card-footer text-muted">

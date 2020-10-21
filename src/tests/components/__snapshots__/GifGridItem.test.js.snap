@@ -18,7 +18,7 @@ exports[`Pruebas en <GifGridItem/> Debe de Renderizar correctamente el component
       <span
         className="font-weight-bolder"
       >
-        Video Games
+        Test
       </span>
        - ID: 
       <span
@@ -36,7 +36,7 @@ exports[`Pruebas en <GifGridItem/> Debe de Renderizar correctamente el component
         src="https://media.giphy.com/media/kl5ctZSctCbE4/giphy.gif"
       />
       <h5
-        className="card-title"
+        className="card-title h5"
       >
         GOW 3
       </h5>
@@ -47,14 +47,14 @@ exports[`Pruebas en <GifGridItem/> Debe de Renderizar correctamente el component
         <span
           className="font-weight-lighter text-monospace"
         >
-          Poringa!
+          source.net!
         </span>
       </p>
     </div>
     <div
       className="card-footer text-muted"
     >
-      20
+      21
     </div>
   </div>
 </div>
