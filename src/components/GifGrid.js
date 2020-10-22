@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-//import { getGifs } from '../helpers/GetGifs';
+// import { getGifs } from '../helpers/GetGifs';
 import { useFetchGifs } from '../hooks/useFetchGifs'
 import GifGridItem from './GifGridItem';
 
@@ -9,7 +9,7 @@ export const GifGrid = ({ category }) => {
     const { loading, data: imagenes } = useFetchGifs(category);
 
     useEffect(() => {
-
+        console.log(`Prueba de GifGrid primera Vez`);
     }, [category]);
 
     return (
@@ -22,7 +22,7 @@ export const GifGrid = ({ category }) => {
                 </div>
             }
             {imagenes.map((img) => {
-                return (<GifGridItem {...img} />)
+                return (<GifGridItem key={img.id} {...img} />)
             })}
         </div>
     )

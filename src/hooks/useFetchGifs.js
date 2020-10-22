@@ -9,7 +9,9 @@ export const useFetchGifs = (category) => {
     });
 
     useEffect(() => {
+        console.log(`Prueba de useFetchGifs`);
         getGifs(category).then(resp => {
+            console.log(resp);
             setState({
                 data: resp,
                 loading: false,
