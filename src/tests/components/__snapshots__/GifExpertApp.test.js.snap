@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente <GifExpertApp/> Debe de mostrar una lista de categorias 1`] = `
+<div
+  className="row justify-content-center"
+>
+  <div
+    className="col"
+  >
+    <h2
+      className="h2 font-weight-lighter text-center text-muted my-3"
+    >
+      GiftExpertApp
+    </h2>
+    <AddCategory
+      setCategories={[Function]}
+    />
+    <hr
+      className="hr shadow-lg"
+    />
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col"
+      >
+        <GifGrid
+          category="Programming"
+          key="Programming"
+        />
+        <GifGrid
+          category="VueJs"
+          key="VueJs"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Pruebas en el componente <GifExpertApp/> Debe de renderizar correctamente el componente 1`] = `
+<div
+  className="row justify-content-center"
+>
+  <div
+    className="col"
+  >
+    <h2
+      className="h2 font-weight-lighter text-center text-muted my-3"
+    >
+      GiftExpertApp
+    </h2>
+    <AddCategory
+      setCategories={[Function]}
+    />
+    <hr
+      className="hr shadow-lg"
+    />
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col"
+      />
+    </div>
+  </div>
+</div>
+`;
